@@ -80,3 +80,37 @@ medium 구독할까 말까 맨날 고민하네요.
 [https://gist.github.com/slikts/e224b924612d53c1b61f359cfb962c06](https://gist.github.com/slikts/e224b924612d53c1b61f359cfb962c06)  
 [https://gist.github.com/slikts/fd3768de1493419ed9506002b452fcdc](https://gist.github.com/slikts/fd3768de1493419ed9506002b452fcdc)Stackoverflow - useMemo on non-primitive value  
 [https://stackoverflow.com/questions/53074551/when-should-you-not-use-react-memo](https://stackoverflow.com/questions/53074551/when-should-you-not-use-react-memo)ㄱㄱ
+
+# Difference between UseSelector and MapStateToProps
+
+I think a little different thing that is using  `useSelector`  for a "stable" instance of  `Content`  will not invoke re-render.
+
+In the case of invoking re-render on every-tick is simply describe when we make(return) new object in every call of useSelector like below:
+```ts
+const badPractice: object = useSelector((s: T.State) => {
+  printingContentId: s.Pages.Content.printingContentId,
+  selectedGroupId: s.Pages.Content.selectedGroupId,
+});
+```
+Also it can be resolved when you pass `Shallow Comparison` functions into second parameter:
+
+```ts
+import { shallowEqual } from 'react-redux';
+
+const itWorksNice: object = useSelector((s: T.State) => {
+  printingContentId: s.Pages.Content.printingContentId,
+  selectedGroupId: s.Pages.Content.selectedGroupId,
+}, shallowEqual);
+```
+
+Because  [@hyeokjoo](https://github.com/hyeokjoo)  already discuss about that  `UseSelector`  hook intended to get Single data from State.
+
+Previously when we using Class Component, also we used  `connect`  function in React-redux,  
+and it gets  `mapStateToProps`  parameters with passing  `object`.
+
+So the default strategy of  `mapStateToProp`  is  `shallowEqual`  and  `useSelector`  is  `===`.
+
+Also, we got POC what changes other index data in the same Collection could not invoke re-render(another collection instances could not be regenerated).  
+=> When we call action and reducer seems makes new array and object, but it could not really generate new object on every calls on Reducer.
+
+**So the conclusion is "Using object-type value in state is safe, but we should avoid to get fresh object without shallowEqual".**

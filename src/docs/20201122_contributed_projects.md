@@ -16,7 +16,7 @@
 - 스크린 선택 컴포넌트(ScreenPicker) 구현
 사이즈 선택 방식 개선점 제시 및 변경 (컴포넌트별 스타일 상속 및 직접 구현 => S/M/L 일반화)
 
-## Location Overlay (X/Y/Z 위치 표시)
+## Location Overlay (X/Y/Z 지도 내 좌표 표시)
 
 - UX/UI 컴포넌트 구현 및 API 연동
 
@@ -30,16 +30,16 @@
 - iPad 지도 인터랙션 동작하지 않는 문제 핫픽스 (대형 업체 이슈 대응)
 - 전체 레이아웃 반응형 작업 트러블슈팅 지원 (페어 코딩)
 
-## v2.4.0 #feature_measurement_grouping 
+## v2.4.0 #feature_measurement_grouping (측정의 파일-폴더 자료구조 및 드래그&드랍 상호작용 지원)
 
 - 다중 계층 지원 Drag&Drop 라이브러리 작성 및 통합
 - UX/UI 구현, API 연동 및 배포
 
-## v2.5.0 #feature_overlay_grouping 
+## v2.5.0 #feature_overlay_grouping (도면의 파일-폴더 자료구조 및 드래그&드랍 상호작용 지원)
 
 - 중복 로직 방지(리팩토링) 및 구현, API 연동
 
-## v2.6.0 #feature_print_with_overlay 
+## v2.6.0 #feature_print_with_overlay (도면 + 지도 인쇄 기능 지원)
 
 - UX/UI 수정, API 연동, 배포
 
@@ -47,6 +47,6 @@
 
 - UX/UI 수정, API 연동, 배포
 
-## v2.8.0 [Overlay Center feature] 도면 / 측정 중심 이동
+## v2.8.0 #feature_cmi (도면/측정 중심 이동)
 
 - UX/UI 수정, API 연동, 배포
