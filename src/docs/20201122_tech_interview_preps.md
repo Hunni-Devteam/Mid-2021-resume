@@ -11,6 +11,12 @@ Redux-observable 에선 RxJS(Observer[Observable] + Iterator[.next] + 함수형 
 비슷한 문제를 최근 Redux 대체하는 상태 관리 라이브러리에서도 공유한다. `recoil` , `jotai` 등.
 `Atom` 이라는 단위로 작업하는데 결국 `Atom` 여러개를 묶어서 작업하면 `molecules` 가 되는 거고 `molecules` 여러 개 묶어서 처리하려면 고분자합성비동기처리패턴..비스무레한 게 나오는 것이고... 이것이 미들웨어 레이어와 비슷한 구현이 될 것이다.
 
+https://jbee.io/react/thinking-about-global-state/
+최근 jbee 선생님(?)의 전역 상태 저장소에 대한 단상을 봤는데,
+이미 Angular에서 Singleton Service로 도메인 별 상태를 분리해 관리하는 패턴을 써왔기 떄문에.. (서버사이드와 비슷한 방식으로 도메인을 분리함을 알 수 있음)
+전역 상태로 모든 API Result를 관리하는 것도 언젠가는 오버헤드가 큰 패턴이라며 Deprecated 될 수도 있지 않나 생각해봅니다.
+
+
 # 자바스크립트 프로토타입을 다른 언어로 개발하던 엔지니어에게 설명해보세요!
 
 ## 첫면접 질문
