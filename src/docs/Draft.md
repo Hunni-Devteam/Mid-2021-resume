@@ -1,4 +1,4 @@
-# 20210106 - UseEffect Deps-related discussions on 
+# 20210106 - UseEffect Deps-related discussions on Slack
 
 ## Shabriwa Today at 4:59 PM
 
