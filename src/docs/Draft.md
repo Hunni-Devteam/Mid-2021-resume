@@ -82,3 +82,56 @@ So yes, we can keep it bruh
 :+1:
 1
 
+# Function.apply to Object Spread
+
+## Hun-Kang reviewed 4 hours ago
+
+packages/app/src/store/duck/Contents/index.ts
+```ts
+    const locationX: number[] = locations.map((c) => c[0]);
+    const locationY: number[] = locations.map((c) => c[1]);
+
+    const minX: number = Math.min.apply(null, locationX);
+ ```
+ 
+## @Hun-Kang Hun-Kang 4 hours ago • 
+ 
+Should we use .apply to make fallback result to Infinity?
+I've checked using Math.min with passing empty array returns 0 as well 👀
+
+ 
+## @briwa-angelswing briwa-angelswing(briwa) 4 hours ago Author
+@Hun-Kang I think it's highly unlikely that locations or printingSquare is going to be an empty array 🤔
+
+ 
+## @Hun-Kang Hun-Kang 1 hour ago 
+Ah yes so I thought that Math.min.apply(null, Array<Number> can be replaced with Math.min(Array<Number>) 😉
+
+ 
+## @briwa-angelswing briwa-angelswing(briwa) 36 minutes ago • 
+ Author
+@Hun-Kang Math.min(Array<Number>)를 못해요 🤔
+screenshot_385
+
+You're supposed to pass in a list of numbers as arguments to Math.min, otherwise it gives the wrong result (I know, Javascript is weird...)
+screenshot_388
+
+I know that you can spread it like this to make it work:
+screenshot_386
+
+But I chose not to because spread means concatenating and in this case no concatenation necessary because .apply can do it without it hehe. In this case I prefer without spreading and use .apply. What do you think?
+
+ 
+## @Hun-Kang Hun-Kang 1 minute ago • 
+ 
+I think both are cool but some kinds of articles are preferred to use spread 😅
+
+Because you know that apply is not a method of Math it's Object's one, called with prototype chain.
+The performance issue from the prototype is not a proper context so I'll not mention it 😂
+
+But I think it's just a sugar-like decision for this PR. Keep or not is yours and I'll agree with you 😉 !
+
+https://eslint.org/docs/rules/prefer-spread
+https://derickbailey.com/2015/11/16/kill-apply-with-the-spread-operator/
+
+## Math.min 명세 착각해서 `Array<Number>` 던진다고 했는데 `...args: Number` 형태가 맞을듯..
