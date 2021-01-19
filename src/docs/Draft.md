@@ -86,7 +86,6 @@ So yes, we can keep it bruh
 
 ## Hun-Kang reviewed 4 hours ago
 
-packages/app/src/store/duck/Contents/index.ts
 ```ts
     const locationX: number[] = locations.map((c) => c[0]);
     const locationY: number[] = locations.map((c) => c[1]);
