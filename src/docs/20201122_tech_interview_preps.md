@@ -92,6 +92,10 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
 컴파일할 때 await 아래 구문을 모두 `promise.then` 으로 래핑하면 될 것 같습니다.
 try-catch 구문이 존재할 경우 catch 영역을 수집해 `Promise.catch`콜백으로 추가.
 
+### Added 20200608 - Javascript Async Programming Deep-Dive
+
+https://www.notion.so/7750/Javascript-Async-Programming-Deep-Dive-d32284f085d848909c70914f57f59699
+
 # 짧은 질문
 
 ## var, let, const 변수 선언방식 차이
