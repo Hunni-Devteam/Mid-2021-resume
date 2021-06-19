@@ -25,8 +25,8 @@ If there’s a task, just attach it into `Call stack`.
 1.  **Input**
 
 why input is typed  `any`? => I don’t know….
-but it seems can be consume any values like any  `arrayLike`  and  `iterable`s.
-I think they considered it seems not required to specify type.
+In official document, it says input should be a kind of `arrayLike`  or  `iterable`s.
+I think they judged it seems not required to specify type.
 **allowed type for `input` is `ObservableInput`.**
 
 `type ObservableInput<T> = SubscribableOrPromise<T> | ArrayLike<T> | Iterable<T>;`
